@@ -28,3 +28,10 @@ Change the files in /application and watch the changes live using your configs d
 ```
 http://YOUR.CONFIGS.DOMAIN:3000
 ```
+
+### Commands
+
+Commands that had been run during the Development process
+
+## Used Tutorials
+  * https://www.techandstartup.com/tutorials/react-redux-crud-app
