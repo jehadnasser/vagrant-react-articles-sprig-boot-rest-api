@@ -11,6 +11,12 @@ Evaluating the development of an articles app based on react, bootstrap and json
 
 ## Usage
 
+### Configuration
+
+Copy the config.yml.example to config.yml and alternate as you need it.
+
+### Run
+
 ```
 vagrant up
 ```
