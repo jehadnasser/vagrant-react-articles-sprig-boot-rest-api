@@ -1,0 +1,5 @@
+---
+- andrelohmann.vagrant_centos_defaults
+- andrelohmann.docker
+- andrelohmann.nodesource
+...
