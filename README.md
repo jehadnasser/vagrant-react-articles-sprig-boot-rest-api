@@ -41,6 +41,12 @@ Commands that had been run during the Development process
 npm install --save-dev json-server
 ```
 
+#### Install necessary packages
+
+```
+npm install --save redux react-redux redux-thunk react-router-dom axios
+```
+
 ### Run lokal Development Server
 
 ```
