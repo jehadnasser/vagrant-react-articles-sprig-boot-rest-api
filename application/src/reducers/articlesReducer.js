@@ -1,4 +1,4 @@
-import { RECEIVE_ARTICLES, ADD_ARTICLE } from '../actions';
+import { RECEIVE_ARTICLES, ADD_ARTICLE, REMOVE_ARTICLE } from '../actions';
 
 const initialState = { articles: [] }
 export default function articlesReducer(state = initialState, action) {
@@ -7,6 +7,8 @@ export default function articlesReducer(state = initialState, action) {
       return action.articles;
       case ADD_ARTICLE:
         return [action.payload, ...state];
+      case REMOVE_ARTICLE:
+        return state.filter(article => article.id !== action.payload.id);
       default:
         return state;
   }
