@@ -142,13 +142,40 @@
     #become: yes
     #become_user: vagrant
 
-  # start react autoreload service in the background
-  - name: start react autoreload server
-    shell: nohup npm start &
-    args:
-      executable: /bin/bash
-      chdir: /home/vagrant/application/
-    become: yes
-    become_user: vagrant
+  # start react autoreload service and json-server in the background
+  - name: add json-server systemd unit file
+    copy:
+      src: json-server.service
+      dest: /etc/systemd/system/json-server.service
+      mode: 0644
 
+  - name: add react-app systemd unit file
+    copy:
+      src: react-app.service
+      dest: /etc/systemd/system/react-app.service
+      mode: 0644
+
+  - name: reload systemd
+    systemd:
+      daemon_reload: yes
+
+  - name: enable json-server
+    systemd:
+      name: json-server
+      enabled: yes
+
+  - name: start json-server
+    systemd:
+      name: json-server
+      state: started
+
+  - name: enable react-app
+    systemd:
+      name: react-app
+      enabled: yes
+
+  - name: start react-app
+    systemd:
+      name: react-app
+      state: started
 ...
