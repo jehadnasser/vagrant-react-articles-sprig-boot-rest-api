@@ -2,6 +2,7 @@
 /config.yml
 /*.log
 /application/.env
+/application/db.json
 /application/node_modules
 /application/nohup.out
 /ansible_vagrant/roles/*

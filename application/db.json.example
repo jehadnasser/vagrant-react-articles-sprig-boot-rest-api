@@ -1,0 +1,19 @@
+{
+  "articles": [
+    {
+      "title": "my first article",
+      "content": "this is the content of my first article",
+      "id": "-SokcFE"
+    },
+    {
+      "title": "my second article",
+      "content": "this is the content of my second article",
+      "id": "gtsOhcV"
+    },
+    {
+      "title": "my third article",
+      "content": "this is the content of my third article",
+      "id": "SUVP8SF"
+    }
+  ]
+}
