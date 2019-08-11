@@ -53,5 +53,11 @@ npm install --save redux react-redux redux-thunk react-router-dom axios
 ./node_modules/.bin/json-server db.json --watch db.json --port 5000  --host 0.0.0.0
 ```
 
+### Run test
+
+```
+npm test
+```
+
 ## Used Tutorials
   * https://www.techandstartup.com/tutorials/react-redux-crud-app
