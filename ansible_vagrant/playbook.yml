@@ -14,7 +14,7 @@
     docker_users: vagrant
 
   roles:
-  - andrelohmann.vagrant_centos_defaults # uncomment, if you chose centos/7 for vagrant image
+  - andrelohmann.root_colored_prompt
   - andrelohmann.nodesource
   - andrelohmann.docker
 

@@ -23,8 +23,8 @@ Vagrant.configure("2") do |config|
   config.hostmanager.manage_host = true
   config.hostmanager.include_offline = true
 
-  config.vm.box = "centos/7"
-  #config.vm.box = "ubuntu/bionic64"
+  #config.vm.box = "centos/7"
+  config.vm.box = "ubuntu/bionic64"
 
   # set memory to 2048m
   config.vm.provider "virtualbox" do |vb|
