@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { updateArticle } from '../actions';
 
 class ArticleEdit extends React.Component {
+  state = { title: this.props.article.title, content: this.props.article.content };
+
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
