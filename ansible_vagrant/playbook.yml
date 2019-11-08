@@ -5,18 +5,51 @@
   become_method: sudo
 
   vars:
-    yum_packages:
-    - nano
-    - wget
-    - htop
-    - net-tools
+    required_packages:
+    - git
+    - tcptraceroute
+    - nmap
+    - jq
+    - python3-mysqldb
+    zulu_openjdk_version: "12"
     nodesource_nodejs_version: '10' # LTS for create-react-app dependency
     docker_users: vagrant
+    percona_mysql_root_password: vagrant
+    mysql_grants_deployment_user: root
+    mysql_grants_deployment_password: "{{ percona_mysql_root_password }}"
+    mysql_grants_databases:
+    - name: rest_api_db
+      encoding: utf8
+    mysql_grants_users:
+    - name: root # allow root access from outside
+      password: "{{ percona_mysql_root_password }}"
+      host: "%"
+      priv: '*.*:ALL'
+      state: present
+    - name: rest_api_user
+      password: vagrant
+      host: "%" # allow access to the db from everywhere
+      priv: 'rest_api_db.*:ALL'
+      state: present
+
+  pre_tasks:
+  - name: Install required packages
+    apt:
+      name: "{{ required_packages }}"
+      state: latest
+      dpkg_options: 'force-confnew,force-confdef'
+      autoclean: yes
+      autoremove: yes
+      update_cache: yes
+      cache_valid_time: 3600
 
   roles:
   - andrelohmann.root_colored_prompt
   - andrelohmann.nodesource
   - andrelohmann.docker
+  - andrelohmann.percona_mysql
+  - andrelohmann.mysql_grants
+  - andrelohmann.zulu_openjdk
 
   tasks:
 

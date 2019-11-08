@@ -43,6 +43,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.synced_folder "ansible_vagrant", "/vagrant/ansible_vagrant", create: true, owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=775"]
   config.vm.synced_folder "application", "/home/vagrant/application", create: true, owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=775"]
+  config.vm.synced_folder "spring-boot-rest-api", "/home/vagrant/spring-boot-rest-api", create: true, owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=775"]
   #config.vm.synced_folder "application", "/home/vagrant/application", type: "nfs", create: true, mount_options: ["dmode=775,fmode=775"]
 
   # auto update guest additions
@@ -51,9 +52,10 @@ Vagrant.configure("2") do |config|
   # provision the vagrant machine using ansible
   # install ansible from its default repo
   config.vm.provision "ansible_local" do |ansible|
-    ansible.install = true
-    ansible.install_mode = :default
-    ansible.playbook = "ansible_vagrant/playbook.yml"
-    ansible.galaxy_role_file = "ansible_vagrant/requirements.yml"
+      ansible.install = true
+      ansible.install_mode = :default
+      ansible.playbook = "ansible_vagrant/playbook.yml"
+      ansible.galaxy_role_file = "ansible_vagrant/requirements.yml"
+      ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
   end
 end

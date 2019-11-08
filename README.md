@@ -1,4 +1,4 @@
-# vagrant-react-articles
+# vagrant-react-articles-spring-boot-rest-api
 (c) Andre Lohmann (and others) 2019
 
 ## Maintainer Contact
@@ -6,6 +6,8 @@
    <lohmann.andre (at) gmail (dot) com>
 
 ## content
+
+!!! SPRING BOOT REST API IS STILL IN DEVElOPMENT !!!
 
 Evaluating the development of an articles app based on react, bootstrap and json-server backend.
 

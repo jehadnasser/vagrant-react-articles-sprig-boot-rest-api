@@ -2,4 +2,7 @@
 - andrelohmann.root_colored_prompt
 - andrelohmann.docker
 - andrelohmann.nodesource
+- andrelohmann.percona_mysql
+- andrelohmann.mysql_grants
+- andrelohmann.zulu_openjdk
 ...
