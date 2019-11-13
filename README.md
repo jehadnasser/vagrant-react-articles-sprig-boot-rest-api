@@ -61,5 +61,39 @@ npm install --save redux react-redux redux-thunk react-router-dom axios
 npm test
 ```
 
+### Demo API
+
+This app uses an articles demo API; articles are just items. They're identified by their ids, which are unique long integers, and live under `/api/<api-version>/articles/<id>`.
+API's version and healthcheck are endpoints, they live under `/api/<api-version>/version` and `/api/<api-version>/healthcheck` consecutively.
+
+API verbs:
+
+Verb | Endpoint
+------|------------
+GET | `/api/<api-version>/version`
+GET | `/api/<api-version>/healthcheck`
+GET | `/api/<api-version>/articles`
+GET | `/api/<api-version>/articles/<id>`
+POST | `/api/<api-version>/articles`
+PATCH | `/api/<api-version>/articles/<id>`
+DELETE | `/api/<api-version>/articles/<id>`
+
+
+For example, to get all articles: http://react-articles.lokal:5000/api/v1/articles
+
+response:
+
+```javascript
+[
+   {
+    "id": 1,
+    "title": "Lorem Ipsum",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam facilisis aliquam laoreet. Aliquam erat volutpat.",
+    "createdAt": "2019-11-13T19:14:25.964+0000",
+    "updatedAt": "2019-11-13T19:14:25.964+0000"
+   }
+]
+```
+
 ## Used Tutorials
   * https://www.techandstartup.com/tutorials/react-redux-crud-app
