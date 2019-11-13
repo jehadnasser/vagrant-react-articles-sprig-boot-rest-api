@@ -27,8 +27,18 @@ vagrant up
 
 The Vagrantfile installs one machine with docker + nodejs and creates a react app template using [create-react-app](https://facebook.github.io/create-react-app/) in the /application folder. It also starts the autoreloader in the background.
 
-Change the files in /application and watch the changes live using your configs domain.
+Run the API in `/spring-boot-rest-api`:
 
+```
+./mvnw  package && java -jar target/demo-0.0.1-SNAPSHOT.jar
+```
+
+Run the App In `/application`:
+```
+npm start
+```
+
+Access the App:
 ```
 http://YOUR.CONFIGS.DOMAIN:3000
 ```
@@ -78,8 +88,9 @@ POST | `/api/<api-version>/articles`
 PATCH | `/api/<api-version>/articles/<id>`
 DELETE | `/api/<api-version>/articles/<id>`
 
+Default port is `8080`
 
-For example, to get all articles: http://react-articles.lokal:5000/api/v1/articles
+For example, to get all articles: http://react-articles.lokal:8080/api/v1/articles
 
 response:
 
