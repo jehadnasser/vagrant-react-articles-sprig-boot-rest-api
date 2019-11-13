@@ -1,4 +1,4 @@
-package de.smartformer.demo.demo;
+package de.smartformer.demo.demo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
