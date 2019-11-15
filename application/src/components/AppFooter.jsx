@@ -7,7 +7,7 @@ class AppFooter extends Component{
         return (
             <div>
                 <footer>
-                    <div className="container bg-dark p-3">
+                    <div className="container bg-dark p-3 mt-5">
                         <div className="row">
                             <div className="col-6 text-light">App version: 1.0</div>
                             <div className="col-6 text-light">
