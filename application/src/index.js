@@ -8,10 +8,12 @@ import './stylesheets/index.css';
 import App from './components/App';
 import rootReducer from './reducers';
 import { getArticles } from './actions';
+import { getApiVersion } from './actions';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));//, logger));
 
 store.dispatch(getArticles());
+store.dispatch(getApiVersion());
 
 ReactDOM.render(
   <Provider store={store}>
