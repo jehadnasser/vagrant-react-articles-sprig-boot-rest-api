@@ -5,16 +5,20 @@ import ArticleInfo from './ArticleInfo';
 import ArticleEdit from './ArticleEdit';
 import {Router, Route, NavLink, Switch} from 'react-router-dom'
 import history from '../history';
+import AppFooter from './AppFooter';
 
 class App extends Component {
   render() {
     return (
+      <div>
       <Router history={history}>
         <div className="container">
           <Navigation />
           <Main />
         </div>
       </Router>
+      <AppFooter />
+      </div>
     );
   }
 }
